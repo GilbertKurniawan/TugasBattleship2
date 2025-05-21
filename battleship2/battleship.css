@@ -1,0 +1,117 @@
+body {
+	background-color: black;
+}
+div#board {
+	float: right;
+	position: relative;
+	width: 972px;
+	height: 811px;
+	margin: auto;
+	background: url("board.jpg") no-repeat;
+}
+
+div#messageArea {
+	color: rgb(83, 175, 19);
+}
+
+.empty{
+	background: url("") no-repeat center center;
+}
+
+.hit {
+	background: url("ship.png") no-repeat center center;
+}
+.miss {
+	background: url("miss.png") no-repeat center center;
+}
+table {
+	border-spacing: 0px; 
+	/* could use border-collapse instead */
+	/* border-collapse: collapse; */
+	position: absolute;
+	left: 173px;
+	top: 98px;
+}
+td {
+    border: 1px solid rgb(42, 82, 23);
+	width: 92px;
+	height: 92px;
+}
+
+form {
+	padding: 15px;
+	background-color: rgb(83, 175, 19);
+}
+form input {
+	background-color: rgb(205, 241, 178);
+	border-color: rgb(83, 175, 19);
+	font-size: 1em;
+}
+
+div#info{
+	margin: 5px;
+	padding: 15px;
+	float: left;
+	background-color: yellowgreen;
+	width: 408px;
+	height: 1000px;
+}
+
+.score {
+    display: flex;
+
+}
+
+.playername {
+    padding-right: 2rem;
+}
+
+.playerScore {
+    padding-left: 2rem;
+    border-left: 5px solid rgb(32, 71, 5);
+    border-radius: 3px;
+}
+
+.playerScoreHitam {
+    padding-left: 2rem;
+    border-left: 5px solid black;
+    border-radius: 3px;
+}
+
+
+#player1form {
+    position: absolute;
+    top : 15px;
+    right: 670px;
+    background-color: #812929;
+    opacity: 0.9;
+}
+
+#player2form {
+    position: absolute;
+	top : 15px;
+    right: 17px;
+    background-color: #812929;
+    opacity: 0.9;
+}
+
+#tombol_continue_game{
+	position: absolute;
+	top : 40px;
+    right: 480px;
+    background-color: #ce8181;
+    opacity: 0.9;
+}
+
+#messageArea{
+	text-align: center;
+	color: red;
+	padding: 10px;
+	background-color: rgb(21, 75, 19);
+}
+
+.hof{
+	color: rgb(112, 16, 16);
+	padding: 10px;
+	background-color: rgb(98, 204, 96);
+}

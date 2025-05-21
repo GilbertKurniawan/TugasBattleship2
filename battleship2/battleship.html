@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battleship</title>
+    <link type="text/css" rel="stylesheet" href="battleship.css">
+</head>
+<body>
+<div id="board">
+
+<table>
+<tr>
+<td id="00"></td> <td id="01"></td> <td id="02"></td> <td id="03"></td>
+<td id="04"></td> <td id="05"></td> <td id="06"></td>
+</tr>
+<tr>
+<td id="10"></td> <td id="11"></td> <td id="12"></td> <td id="13"></td>
+<td id="14"></td> <td id="15"></td> <td id="16"></td>
+</tr>
+<tr>
+<td id="20"></td> <td id="21"></td> <td id="22"></td> <td id="23"></td>
+<td id="24"></td> <td id="25"></td> <td id="26"></td>
+</tr>
+<tr>
+<td id="30"></td> <td id="31"></td> <td id="32"></td> <td id="33"></td>
+<td id="34"></td> <td id="35"></td> <td id="36"></td>
+</tr>
+<tr>
+<td id="40"></td> <td id="41"></td> <td id="42"></td> <td id="43"></td>
+<td id="44"></td> <td id="45"></td> <td id="46"></td>
+</tr>
+<tr>
+<td id="50"></td> <td id="51"></td> <td id="52"></td> <td id="53"></td>
+<td id="54"></td> <td id="55"></td> <td id="56"></td>
+</tr>
+<tr>
+<td id="60"></td> <td id="61"></td> <td id="62"></td> <td id="63"></td>
+<td id="64"></td> <td id="65"></td> <td id="66"></td>
+</tr>
+</table>
+</div>
+
+
+<div id="info">  
+    <h3> Game Setting</h3>
+
+        <form id="numShipsForm">
+            <label for="numShips">Number of Ships:</label>
+            <select name="numShips" id="numShips">
+            <option value="3">3</option>
+            <option value="5">5</option>
+            <option value="7">7</option>
+            </select>
+            <input type="button" id="NumShipsInputButton" class="okbutton" value="Ok" onclick="model.makeNumship()">
+        </form>
+        <!-- Number of Sets -->
+        <form id="numSetsForm">
+            <label for="numSets">Number of Sets:</label>
+            <select name="numSets" id="numSets">
+            <option value="1">1</option>
+            <option value="3">3</option>
+            <option value="5">5</option>
+            </select>
+            <input type="button" id="numSetsInputButton" class="okbutton" value="Ok" onclick="model.makeSets()" disabled="true">
+        </form>
+        
+        <div class="score">
+            <h4 class="playername">Jumlah Kapal</h4>
+            <h4 class="playerScoreHitam" id="jumlah_kapal_pilihan">0</h4>
+        </div>
+
+        <div class="score">
+            <h4 class="playername">Jumlah Set</h4>
+            <h4 class="playerScoreHitam" id="jumlah_set_pilihan">0</h4>
+        </div>
+
+        <form id="player1form">
+            Player 1: 
+            <input type="text" id="guessInput" placeholder="A1">
+            <input type="button" id="fireButton" value="Fire!" disabled="true">
+        </form>
+        <form id="player2form">
+            Player 2:
+            <input type="text" id="guessInput2" placeholder="A1">
+            <input type="button" id="fireButton2" value="Fire!" disabled="true">
+        </form>
+
+        <div id="tombol_continue_game">
+            <input type="button" id="tombol_continue" value="Next Set" disabled="true" onclick="controller.next_set()">
+        </div>
+        
+        <br>
+        <h3>Game Info</h3>
+    
+            <h3 id="messageArea"></h3>
+
+            <div class="score">
+                <h4 class="playername">Set</h4>
+                <h4 class="playerScore" id="set_ke">-</h4>
+            </div>
+
+            <div class="score">
+                <h4 class="playername">Score Player 1</h4>
+                <h4 class="playerScore" id="score_p1">0</h4>
+            </div>
+            <div class="score">
+                <h4 class="playername">Score Player 2</h4>
+                <h4 class="playerScore" id="score_p2">0</h4>
+            </div>
+
+            <div class="score">
+                <div class="playername" id="player_1_win">0</div>
+                <div class="playerScore" id="player_2_win">0</div>
+            </div>
+
+            <div class="score">
+                <h4 class="playername">Winner </h4>
+                <h4 class="playerScore" id="winner">-</h4>
+            </div>
+            <br><br>
+            <div class="hof">
+                <h3>Hall of Fame (HoF): </h3>
+                <h4> 1. Jacob, Score 70  </h4>
+                <h4> 2. Daniel, Score 60  </h4>
+                <h4> 3. Michael, Score 60  </h4>
+                <h4> ... </h4>
+                <h4 id="hof"></h4>
+            </div>
+
+       
+</div>
+<script src="battleship.js"></script>
+</body>
+</html>
